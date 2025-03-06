@@ -1019,22 +1019,22 @@ public class Sequre extends AppCompatActivity {
     }
 
     public void scan(id.sequre.sdk.Callback callback) {
-        if (!validated) {
-            validate(new Callback() {
-                @Override
-                void on() {
-                    FINISHED = false;
-                    CALLBACK = callback;
-                    CONTEXT.startActivity(new Intent(CONTEXT, Sequre.class));
-                }
-            });
-        } else if (message != null) {
-            Utils.alert(CONTEXT, CONTEXT.getString(R.string.app_name), message);
-        } else {
+//        if (!validated) {
+//            validate(new Callback() {
+//                @Override
+//                void on() {
+//                    FINISHED = false;
+//                    CALLBACK = callback;
+//                    CONTEXT.startActivity(new Intent(CONTEXT, Sequre.class));
+//                }
+//            });
+//        } else if (message != null) {
+//            Utils.alert(CONTEXT, CONTEXT.getString(R.string.app_name), message);
+//        } else {
             FINISHED = false;
             CALLBACK = callback;
             CONTEXT.startActivity(new Intent(CONTEXT, Sequre.class));
-        }
+//        }
     }
 
     abstract class Callback {
