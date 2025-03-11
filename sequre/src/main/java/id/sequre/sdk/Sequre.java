@@ -418,9 +418,13 @@ public class Sequre extends AppCompatActivity {
                     if ("Active".equals(status)) {
                         detect(imageProxy, imageBuffer);
                     } else {
-                        result.status = Status.Fake;
-                        result.message = "inactive";
-                        finish();
+                        if(response != null){
+                            result.status = Status.Fake;
+                            result.message = "inactive";
+                            finish();
+                        }else {
+                            detect(imageProxy, imageBuffer);
+                        }
                     }
                 });
             } else {
